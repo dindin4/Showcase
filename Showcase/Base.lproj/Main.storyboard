@@ -70,12 +70,15 @@
                                                 <rect key="frame" x="0.0" y="21.5" width="65" height="65"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7x-eZ-mhd" customClass="MaterialButton" customModule="Showcase" customModuleProvider="target">
-                                                <rect key="frame" x="105" y="36" width="198" height="36"/>
+                                                <rect key="frame" x="105" y="38" width="198" height="32"/>
                                                 <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                                 <state key="normal" title="FACEBOOK LOGIN">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="fbButtonPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dat-bj-i4C"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
