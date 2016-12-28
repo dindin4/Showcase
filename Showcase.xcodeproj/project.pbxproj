@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		365087311E14501A0057A8FC /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365087301E14501A0057A8FC /* FeedVC.swift */; };
+		365087331E1450980057A8FC /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365087321E1450980057A8FC /* PostCell.swift */; };
 		36AA4A121E13E35E003199AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AA4A111E13E35E003199AC /* AppDelegate.swift */; };
 		36AA4A141E13E35E003199AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AA4A131E13E35E003199AC /* ViewController.swift */; };
 		36AA4A171E13E35E003199AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36AA4A151E13E35E003199AC /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		3073ABD094894297D02BD09F /* Pods-Showcase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase.release.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase/Pods-Showcase.release.xcconfig"; sourceTree = "<group>"; };
+		365087301E14501A0057A8FC /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		365087321E1450980057A8FC /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		36AA4A0E1E13E35E003199AC /* Showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Showcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36AA4A111E13E35E003199AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36AA4A131E13E35E003199AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +109,6 @@
 				36AA4A241E13E376003199AC /* View */,
 				36AA4A231E13E371003199AC /* Controller */,
 				36AA4A111E13E35E003199AC /* AppDelegate.swift */,
-				36AA4A131E13E35E003199AC /* ViewController.swift */,
 				36AA4A151E13E35E003199AC /* Main.storyboard */,
 				36AA4A181E13E35E003199AC /* Assets.xcassets */,
 				36AA4A1A1E13E35E003199AC /* LaunchScreen.storyboard */,
@@ -117,6 +120,8 @@
 		36AA4A231E13E371003199AC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				36AA4A131E13E35E003199AC /* ViewController.swift */,
+				365087301E14501A0057A8FC /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 				36AA4A2F1E13E5F1003199AC /* MaterialView.swift */,
 				36AA4A341E13E961003199AC /* MaterialButton.swift */,
 				36AA4A361E13EB93003199AC /* MaterialTextField.swift */,
+				365087321E1450980057A8FC /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -304,11 +310,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				36AA4A371E13EB93003199AC /* MaterialTextField.swift in Sources */,
+				365087311E14501A0057A8FC /* FeedVC.swift in Sources */,
 				36AA4A301E13E5F1003199AC /* MaterialView.swift in Sources */,
 				36AA4A141E13E35E003199AC /* ViewController.swift in Sources */,
 				36AA4A121E13E35E003199AC /* AppDelegate.swift in Sources */,
 				36AA4A331E13E63F003199AC /* Constants.swift in Sources */,
 				36AA4A351E13E961003199AC /* MaterialButton.swift in Sources */,
+				365087331E1450980057A8FC /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

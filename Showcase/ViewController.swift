@@ -64,6 +64,10 @@ class ViewController: UIViewController {
                         switch errCode {
                         case .errorCodeUserNotFound:
                             self.createUser(email: email, password: pwd)
+                        case .errorCodeInvalidEmail:
+                            self.showErrorAlert(title: "Could not login", msg: "Email not found")
+                        case .errorCodeWrongPassword:
+                            self.showErrorAlert(title: "Could not login", msg: "Password not correct")
                         case .errorCodeUserMismatch:
                             print("user mismatch - \(error)")
                         default:
@@ -84,7 +88,16 @@ class ViewController: UIViewController {
     func createUser(email:String, password:String) {
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user:FIRUser?, error:Error?) in
             if error != nil {
-                self.showErrorAlert(title: "Could not create account", msg: "Problem creating account: \(error)")
+                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+                    switch errCode {
+                    case .errorCodeUserMismatch:
+                        print("user mismatch - \(error)")
+                    case .errorCodeWeakPassword:
+                        self.showErrorAlert(title: "Could not login", msg: "Password must be at least 6 characters long")
+                    default:
+                        self.showErrorAlert(title: "Could not create account", msg: "Problem creating account: \(error)")
+                    }
+                }
             } else {
                 print("User Created - Logged in!")
                 UserDefaults.standard.set(user?.uid, forKey: KEY_UUID)
