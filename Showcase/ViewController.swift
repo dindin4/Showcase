@@ -47,6 +47,10 @@ class ViewController: UIViewController {
                             print("Login failed. \(error)")
                         } else {
                             print("Logged in!")
+                            
+                            let userDict:Dictionary<String,String> = ["provider":"facebook"]
+                            DataService.instance.createFirebaseUser(uuid: (user?.uid)!, user: userDict)
+                            
                             UserDefaults.standard.set(user?.uid, forKey: KEY_UUID)
                             self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
                         }
@@ -76,6 +80,8 @@ class ViewController: UIViewController {
                     }
                 } else {
                     print("Logged in!")
+                    let userDict:Dictionary<String,String> = ["provider":"password"]
+                    DataService.instance.createFirebaseUser(uuid: (user?.uid)!, user: userDict)
                     UserDefaults.standard.set(user?.uid, forKey: KEY_UUID)
                     self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
                 }
@@ -100,6 +106,8 @@ class ViewController: UIViewController {
                 }
             } else {
                 print("User Created - Logged in!")
+                let userDict:Dictionary<String,String> = ["provider":"password"]
+                DataService.instance.createFirebaseUser(uuid: (user?.uid)!, user: userDict)
                 UserDefaults.standard.set(user?.uid, forKey: KEY_UUID)
                 self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
             }
