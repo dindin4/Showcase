@@ -6,6 +6,8 @@ target 'Showcase' do
   use_frameworks!
 
   # Pods for Showcase
-
-pod 'Firebase'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  
 end

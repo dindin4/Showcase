@@ -23,6 +23,7 @@
 		36AA4A3C1E13F5E3003199AC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA4A391E13F5E3003199AC /* Bolts.framework */; };
 		36AA4A3D1E13F5E3003199AC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA4A3A1E13F5E3003199AC /* FBSDKCoreKit.framework */; };
 		36AA4A3E1E13F5E3003199AC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA4A3B1E13F5E3003199AC /* FBSDKLoginKit.framework */; };
+		36AA4A431E140685003199AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36AA4A421E140685003199AC /* GoogleService-Info.plist */; };
 		B5F8E81EAFFE1A39A7C372AE /* Pods_Showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8661ABC09E175D629320AC37 /* Pods_Showcase.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		36AA4A391E13F5E3003199AC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		36AA4A3A1E13F5E3003199AC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		36AA4A3B1E13F5E3003199AC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		36AA4A421E140685003199AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8661ABC09E175D629320AC37 /* Pods_Showcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCA1768FF69BC79EDD975A2 /* Pods-Showcase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase/Pods-Showcase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 		36AA4A101E13E35E003199AC /* Showcase */ = {
 			isa = PBXGroup;
 			children = (
+				36AA4A421E140685003199AC /* GoogleService-Info.plist */,
 				36AA4A381E13F5CA003199AC /* Frameworks */,
 				36AA4A311E13E62E003199AC /* Utils */,
 				36AA4A261E13E382003199AC /* Resources */,
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36AA4A2B1E13E407003199AC /* NotoSans-Bold.ttf in Resources */,
+				36AA4A431E140685003199AC /* GoogleService-Info.plist in Resources */,
 				36AA4A1C1E13E35E003199AC /* LaunchScreen.storyboard in Resources */,
 				36AA4A2C1E13E407003199AC /* NotoSans-BoldItalic.ttf in Resources */,
 				36AA4A2D1E13E407003199AC /* NotoSans-Italic.ttf in Resources */,

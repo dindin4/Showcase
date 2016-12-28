@@ -70,7 +70,7 @@
                                                 <rect key="frame" x="0.0" y="21.5" width="65" height="65"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7x-eZ-mhd" customClass="MaterialButton" customModule="Showcase" customModuleProvider="target">
-                                                <rect key="frame" x="105" y="38" width="198" height="32"/>
+                                                <rect key="frame" x="105" y="36" width="198" height="36"/>
                                                 <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                                 <state key="normal" title="FACEBOOK LOGIN">
@@ -123,7 +123,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tV6-P2-TED" customClass="MaterialButton" customModule="Showcase" customModuleProvider="target">
                                         <rect key="frame" x="72" y="214" width="198" height="36"/>
@@ -136,6 +136,9 @@
                                         <state key="normal" title="Login/Signup">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="attemptLoginWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddy-os-mOU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -167,10 +170,33 @@
                             <constraint firstItem="yE2-kg-Pu7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="t13-tB-kp4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="76u-gu-sy9" id="zzd-jf-tzu"/>
+                        <outlet property="passwordField" destination="lcJ-g1-3nQ" id="0Ox-ev-sRR"/>
+                        <segue destination="CCS-YL-nLu" kind="show" identifier="loggedIn" id="X9f-sP-Z8D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gWj-Nh-Tuw">
+            <objects>
+                <viewController id="CCS-YL-nLu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yla-pC-30K"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hrt-kq-PBb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xJi-EP-bjh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.53333333329999999" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wi5-AS-HDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988" y="139"/>
         </scene>
     </scenes>
     <resources>
