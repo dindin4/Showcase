@@ -13,12 +13,15 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     var posts = [Post]()
+    static var imageCache = NSCache<AnyObject, AnyObject>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.estimatedRowHeight = 358
         
         let ref = FIRDatabase.database().reference()
         ref.child("posts").observe(.value, with: { (snapshot) in
@@ -47,8 +50,27 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = posts[indexPath.row]
-        print(post.postDescription)
-        return tableView.dequeueReusableCell(withIdentifier: "postCell") as! PostCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as? PostCell {
+            cell.request?.cancel()
+            
+            var image: UIImage?
+            if let url = post.imageUrl {
+                image = FeedVC.imageCache.object(forKey: url as AnyObject) as? UIImage
+            }
+            cell.configureCell(post: post, image: image)
+            return cell
+        } else {
+            return PostCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let post = posts[indexPath.row]
+        if post.imageUrl == nil {
+            return 150
+        } else {
+            return tableView.estimatedRowHeight
+        }
     }
 
 }

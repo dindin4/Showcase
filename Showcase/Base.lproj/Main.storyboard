@@ -214,7 +214,7 @@
                                 <rect key="frame" x="16" y="64" width="343" height="603"/>
                                 <color key="backgroundColor" red="0.87854647636413574" green="0.87854647636413574" blue="0.87854647636413574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="358" id="yll-yV-DAb" customClass="PostCell" customModule="Showcase" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="postCell" id="yll-yV-DAb" customClass="PostCell" customModule="Showcase" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="358"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yll-yV-DAb" id="TpD-EX-CnL">
@@ -311,6 +311,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.87854647636413574" green="0.87854647636413574" blue="0.87854647636413574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="descriptionText" destination="ufM-LG-f5K" id="1Lh-Aq-eME"/>
+                                            <outlet property="likesLabel" destination="Y5u-qF-ULe" id="EJr-0K-zef"/>
                                             <outlet property="profileImage" destination="4JB-Zv-dHK" id="JY2-sl-7T3"/>
                                             <outlet property="showcaseImage" destination="9kv-qS-hq1" id="FtI-4Z-BEW"/>
                                         </connections>
