@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Alamofire
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -20,10 +21,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     var imagePicker: UIImagePickerController!
     
     static var imageCache = NSCache<AnyObject, AnyObject>()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -90,7 +91,36 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBAction func selectimage(_ sender: UITapGestureRecognizer) {
         present(imagePicker, animated: true, completion: nil)
     }
-
+    
     @IBAction func makePost(_ sender: Any) {
+        if let txt = postField.text, txt != "" {
+            if let img = imageSelectorImageView.image {
+                let urlString = "https://post.imageshack.us/upload_api.php"
+                let imgData = UIImageJPEGRepresentation(img, 0.2)!
+                let keyData = "12DJKPSU5fc3afbd01b1630cc718cae3043220f3".data(using: String.Encoding.utf8)!
+                let keyJSON = "json".data(using: String.Encoding.utf8)!
+                
+                Alamofire.upload(multipartFormData: { (data:MultipartFormData) in
+                    data.append(imgData, withName: "fileupload", fileName: "image", mimeType: "image/jpg")
+                    data.append(keyData, withName: "key")
+                    data.append(keyJSON, withName: "format")
+                }, to: urlString, encodingCompletion: { (encodingResult:SessionManager.MultipartFormDataEncodingResult) in
+                    switch encodingResult {
+                    case .success(let request, _, _):
+                        request.responseJSON(completionHandler: { (response:DataResponse<Any>) in
+                            if let info = response.result.value as? Dictionary<String, AnyObject> {
+                                if let links = info["links"] as? Dictionary<String, AnyObject> {
+                                    if let imageLink = links["image_link"] as? String {
+                                        print("LINK: \(imageLink)")
+                                    }
+                                }
+                            }
+                        })
+                    case .failure(let error):
+                        print(error)
+                    }
+                })
+            }
+        }
     }
 }
