@@ -210,8 +210,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDp-kj-0jd" customClass="MaterialView" customModule="Showcase" customModuleProvider="target">
+                                <rect key="frame" x="16" y="72" width="343" height="64"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zGC-lq-okO">
+                                        <rect key="frame" x="8" y="8" width="327" height="48"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Talk about your app" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sSF-1U-nN9" customClass="MaterialTextField" customModule="Showcase" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="48"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="vd0-N6-sP4">
+                                                <rect key="frame" x="230" y="0.0" width="37" height="48"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="37" id="LGy-Jx-ugK"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Zss-Ud-5ME" appends="YES" id="AHE-eE-beH"/>
+                                                </connections>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jfo-oJ-Oer" customClass="MaterialButton" customModule="Showcase" customModuleProvider="target">
+                                                <rect key="frame" x="277" y="0.0" width="50" height="48"/>
+                                                <color key="backgroundColor" red="0.0" green="0.70588235294117641" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="U2L-KU-4be"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="14"/>
+                                                <state key="normal" title="POST">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="makePost:" destination="uYc-Fu-gBO" eventType="touchUpInside" id="Zs0-zQ-wZp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="zGC-lq-okO" firstAttribute="leading" secondItem="gDp-kj-0jd" secondAttribute="leadingMargin" id="Vgc-nk-sBM"/>
+                                    <constraint firstAttribute="height" constant="64" id="cYC-Ms-QUG"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="zGC-lq-okO" secondAttribute="bottom" id="d6X-RC-ptN"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="zGC-lq-okO" secondAttribute="trailing" id="pN0-0X-iz2"/>
+                                    <constraint firstItem="zGC-lq-okO" firstAttribute="top" secondItem="gDp-kj-0jd" secondAttribute="topMargin" id="vYP-Pt-Oh6"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="358" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ffC-da-EBA">
-                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <rect key="frame" x="16" y="144" width="343" height="523"/>
                                 <color key="backgroundColor" red="0.87854647636413574" green="0.87854647636413574" blue="0.87854647636413574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="postCell" id="yll-yV-DAb" customClass="PostCell" customModule="Showcase" customModuleProvider="target">
@@ -322,20 +371,30 @@
                         </subviews>
                         <color key="backgroundColor" red="0.87854647636413574" green="0.87854647636413574" blue="0.87854647636413574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ffC-da-EBA" firstAttribute="top" secondItem="1LF-Nk-gRf" secondAttribute="bottom" id="6RX-Gc-eae"/>
+                            <constraint firstItem="gDp-kj-0jd" firstAttribute="trailing" secondItem="sxz-tG-lMn" secondAttribute="trailingMargin" id="2St-vq-J91"/>
                             <constraint firstItem="9uC-Iz-1G1" firstAttribute="top" secondItem="ffC-da-EBA" secondAttribute="bottom" id="83l-Gs-vYO"/>
                             <constraint firstItem="ffC-da-EBA" firstAttribute="leading" secondItem="sxz-tG-lMn" secondAttribute="leadingMargin" id="Zst-wr-oXY"/>
+                            <constraint firstItem="gDp-kj-0jd" firstAttribute="leading" secondItem="sxz-tG-lMn" secondAttribute="leadingMargin" id="aI2-tG-Yv4"/>
+                            <constraint firstItem="ffC-da-EBA" firstAttribute="top" secondItem="gDp-kj-0jd" secondAttribute="bottom" constant="8" id="pHS-j4-ruG"/>
                             <constraint firstItem="ffC-da-EBA" firstAttribute="trailing" secondItem="sxz-tG-lMn" secondAttribute="trailingMargin" id="q2j-Pn-1DP"/>
+                            <constraint firstItem="gDp-kj-0jd" firstAttribute="top" secondItem="1LF-Nk-gRf" secondAttribute="bottom" constant="8" id="vVG-xP-qL2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hgX-Cx-pvD"/>
                     <connections>
+                        <outlet property="imageSelectorImageView" destination="vd0-N6-sP4" id="E2R-ox-NCx"/>
+                        <outlet property="postField" destination="sSF-1U-nN9" id="WLw-Mf-Cg0"/>
                         <outlet property="tableView" destination="ffC-da-EBA" id="l8s-Xy-CXf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Awp-cU-bKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Zss-Ud-5ME">
+                    <connections>
+                        <action selector="selectimage:" destination="uYc-Fu-gBO" id="R4o-Vi-fG3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1964" y="353"/>
+            <point key="canvasLocation" x="1964" y="352.17391304347831"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1cF-yv-izs">
@@ -358,6 +417,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="50" height="50"/>
         <image name="code-icon-logo" width="318" height="281"/>
         <image name="fb-icon" width="65" height="65"/>
         <image name="heart-empty" width="150" height="147"/>

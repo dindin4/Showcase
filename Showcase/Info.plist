@@ -76,5 +76,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Upload picture for post</string>
 </dict>
 </plist>
